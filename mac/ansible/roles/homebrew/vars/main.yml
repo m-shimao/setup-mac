@@ -1,0 +1,15 @@
+---
+taps:
+  - homebrew/cask
+  - homebrew/cask-versions
+  - homebrew/boneyard
+
+packages:
+  - { name: ansible, state: present }
+  - { name: awscli, state: present }
+  - { name: git, state: present }
+  - { name: jq, state: present }
+  - { name: mas, state: present } # mas-cli(mac apple store)
+  - { name: tree, state: present }
+  - { name: guetzli, state: present }
+  - { name: neovim, state: present }

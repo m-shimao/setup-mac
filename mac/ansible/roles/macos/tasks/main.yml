@@ -1,0 +1,44 @@
+---
+- block:
+
+  - name: DNS setting
+    shell: networksetup -setdnsservers Wi-Fi 8.8.8.8 8.8.4.4
+    tags:
+      - dns
+
+  - block:
+    # check defaults
+    # $ defaults read
+    - name: set osx defaults
+      osx_defaults:
+        domain: "{{ item.domain }}"
+        key: "{{ item.key }}"
+        type: "{{ item.type }}"
+        value: "{{ item.value }}"
+      with_items: "{{ settings }}"
+    tags:
+      - osx_defaults
+
+  - block:
+    # bash setting
+    - name: copy ~/.bash_profile template
+      template:
+        src: .bash_profile.j2
+        dest: ~/.bash_profile
+        owner: m-shimao
+        group: staff
+        mode: 0600
+
+    - name: copy ~/.bashrc template
+      template:
+        src: .bashrc.j2
+        dest: ~/.bashrc
+        owner: m-shimao
+        group: staff
+        mode: 0600
+
+    tags:
+      - bash
+
+  tags:
+    - macos

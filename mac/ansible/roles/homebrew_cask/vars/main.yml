@@ -1,0 +1,11 @@
+---
+packages:
+  - { name: avira-antivirus, state: present }
+  - { name: google-chrome, state: present }
+  - { name: google-japanese-ime, state: present }
+  - { name: slack, state: present }
+  - { name: visual-studio-code, state: present }
+  - { name: iterm2, state: present }
+  - { name: vagrant, state: present }
+  - { name: docker, state: present }
+  - { name: karabiner-elements, state: present }

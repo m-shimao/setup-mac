@@ -12,3 +12,5 @@ packages:
   - { name: tree, state: present }
   - { name: guetzli, state: present }
   - { name: neovim, state: present }
+  - { name: nkf, state: present }
+  - { name: ag, state: present }

@@ -59,5 +59,47 @@
     tags:
       - git
 
+  - block:
+    # vim setting
+    - name: create a directory ~/.vim/autoload
+      file:
+        path: ~/.vim/autoload
+        state: directory
+        mode: 0710
+        owner: m-shimao
+        group: staff
+    - name: create a directory ~/.cache/tmp
+      file:
+        path: ~/.cache/tmp
+        state: directory
+        mode: 0751
+        owner: m-shimao
+        group: staff
+    - name: download vim-plug
+      get_url:
+        url: https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+        dest: ~/.vim/autoload
+        mode: 0644
+        owner: m-shimao
+        group: staff
+    - name: copy vimrc
+      copy:
+        src: vimrc
+        dest: ~/.vimrc
+        owner: m-shimao
+        group: staff
+        mode: 0751
+    - name: copy vim-ftplugin
+      copy:
+        src: ftplugin
+        dest: ~/.vim
+        owner: m-shimao
+        group: staff
+        mode: 0751
+    - name: PlugInstall
+      shell: vim -c PlugInstall -c q -c q
+    tags:
+      - vim
+
   tags:
     - macos

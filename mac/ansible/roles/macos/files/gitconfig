@@ -1,0 +1,33 @@
+[alias]
+    # いい感じのグラフでログを表示
+    graph = log --graph --date=short --decorate=short --pretty=format:'%Cgreen%h %Creset%cd %Cblue%cn %Cred%d %Creset%s'
+    # 上の省略形
+    gr = log --graph --date=short --decorate=short --pretty=format:'%Cgreen%h %Creset%cd %Cblue%cn %Cred%d %Creset%s'
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    lga = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    st = status
+    cm = commit
+    br = branch
+    co = checkout
+    # Untracked filesを表示せず，not stagedと，stagedだけの状態を出力する
+    stt = status -uno
+    # 行ごとの差分じゃなくて，単語レベルでの差分を色付きで表示する
+    difff = diff --word-diff
+    diffc = diff --cached
+    cme = commit --allow-empty
+    ec = !git commit --allow-empty -m \"Make PR\"
+    mkpr = !"f() { git checkout -b $1; git ec; git push -u origin $1; hub pull-request; }; f"
+    see = browse
+    pc = push -u origin HEAD
+[color]
+    ui = true
+[url "git@github.com:"]
+    pushinsteadof = https://github.com/
+[user]
+    name = m-shimao
+    email = shimao.ma@gmail.com
+[core]
+    editor = vim
+    pager = nkf -w | LESSCHARSET=utf-8 less
+[commit]
+    template = ~/.commit_template

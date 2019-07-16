@@ -2,7 +2,6 @@
 taps:
   - homebrew/cask
   - homebrew/cask-versions
-  - homebrew/boneyard
 
 packages:
   - { name: ansible, state: present }

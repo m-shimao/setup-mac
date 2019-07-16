@@ -36,9 +36,28 @@
         owner: m-shimao
         group: staff
         mode: 0600
-
     tags:
       - bash
+
+  - block:
+    # git setting
+    - name: copy ~/.gitconfig template
+      copy:
+        src: gitconfig
+        dest: ~/.gitconfig
+        owner: m-shimao
+        group: staff
+        mode: 0644
+
+    - name: copy ~/.commit_template template
+      copy:
+        src: commit_template
+        dest: ~/.commit_template
+        owner: m-shimao
+        group: staff
+        mode: 0644
+    tags:
+      - git
 
   tags:
     - macos

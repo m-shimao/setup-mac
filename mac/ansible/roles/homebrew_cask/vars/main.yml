@@ -9,3 +9,4 @@ packages:
   - { name: vagrant, state: present }
   - { name: docker, state: present }
   - { name: karabiner-elements, state: present }
+  - { name: thunderbird, state: present }

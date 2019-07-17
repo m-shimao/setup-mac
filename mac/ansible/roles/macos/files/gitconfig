@@ -15,10 +15,11 @@
     difff = diff --word-diff
     diffc = diff --cached
     cme = commit --allow-empty
-    ec = !git commit --allow-empty -m \"Make PR\"
-    mkpr = !"f() { git checkout -b $1; git ec; git push -u origin $1; hub pull-request; }; f"
-    see = browse
     pc = push -u origin HEAD
+    # use hub command
+    see = browse
+    pr = !hub pull-request
+    mkpr = !"f() { git commit --allow-empty -m \"$1\" && git push -u origin HEAD && hub pull-request; }; f"
 [color]
     ui = true
 [url "git@github.com:"]

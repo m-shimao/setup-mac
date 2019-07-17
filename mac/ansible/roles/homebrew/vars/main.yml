@@ -17,3 +17,4 @@ packages:
   - { name: ag, state: present }
   - { name: soracom-cli, state: present }
   - { name: bash-completion, state: present }
+  - { name: hub, state: present }

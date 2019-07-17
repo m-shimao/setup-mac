@@ -21,6 +21,10 @@ if [ -f $HOME/.git-prompt.sh ]; then
     GIT_PS1_SHOWSTASHSTATE=1
 fi
 
+if [ -f /usr/local/bin/hub ]; then
+  eval "$(hub alias -s)"
+fi
+
 ############### ターミナルのコマンド受付状態の表示変更
 # \u ユーザ名
 # \h ホスト名

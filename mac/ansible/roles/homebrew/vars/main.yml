@@ -2,6 +2,7 @@
 taps:
   - homebrew/cask
   - homebrew/cask-versions
+  - soracom/soracom-cli
 
 packages:
   - { name: ansible, state: present }
@@ -14,3 +15,5 @@ packages:
   - { name: neovim, state: present }
   - { name: nkf, state: present }
   - { name: ag, state: present }
+  - { name: soracom-cli, state: present }
+  - { name: bash-completion, state: present }

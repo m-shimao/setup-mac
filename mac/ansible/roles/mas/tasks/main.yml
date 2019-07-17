@@ -20,6 +20,11 @@
         when: '"item.id" not in mas_installed_list.stdout'
         with_items: "{{ packages }}"
 
+      # なぜか古いバージョンがインストールされてしまうことがあるのでupgradeで対応
+      - name: mas upgrade items
+        shell: "mas upgrade {{ item.id }}"
+        with_items: "{{ packages }}"
+
     when: '"mas" in mas_brew_list.stdout_lines'
 
   tags:

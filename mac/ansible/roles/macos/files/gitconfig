@@ -18,8 +18,8 @@
     pc = push -u origin HEAD
     # use hub command
     see = browse
-    pr = pull-request
-    mkpr = !"f() { git commit --allow-empty -m $1; git push -u origin HEAD; git pull-request; }; f"
+    pr = !hub pull-request
+    mkpr = !"f() { git commit --allow-empty -m \"$1\" && git push -u origin HEAD && hub pull-request; }; f"
 [color]
     ui = true
 [url "git@github.com:"]

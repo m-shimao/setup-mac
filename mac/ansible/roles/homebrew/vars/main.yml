@@ -18,3 +18,4 @@ packages:
   - { name: soracom-cli, state: present }
   - { name: bash-completion, state: present }
   - { name: hub, state: present }
+  - { name: ffmpeg, state: present }

@@ -25,7 +25,11 @@ if [ -f /usr/local/bin/hub ]; then
   eval "$(hub alias -s)"
 fi
 
-############### ターミナルのコマンド受付状態の表示変更
+if [ -d /usr/local/opt/ruby/bin ]; then
+  export PATH="/usr/local/opt/ruby/bin:$PATH"
+fi
+
+############## ターミナルのコマンド受付状態の表示変更
 # \u ユーザ名
 # \h ホスト名
 # \W カレントディレクトリ

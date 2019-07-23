@@ -11,3 +11,4 @@ packages:
   - { name: karabiner-elements, state: present }
   - { name: thunderbird, state: present }
   - { name: boostnote, state: present }
+  - { name: skype, state: present }

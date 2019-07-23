@@ -29,6 +29,12 @@ if [ -d /usr/local/opt/ruby/bin ]; then
   export PATH="/usr/local/opt/ruby/bin:$PATH"
 fi
 
+if [ -d $HOME/go ]; then
+  export GOROOT=$HOME/go
+  export GOPATH=$HOME/go/goroot
+  export PATH=$PATH:$HOME/go/bin
+fi
+
 ############## ターミナルのコマンド受付状態の表示変更
 # \u ユーザ名
 # \h ホスト名

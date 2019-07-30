@@ -35,6 +35,10 @@ if [ -d $HOME/go ]; then
   export PATH=$PATH:$HOME/go/bin
 fi
 
+if [ -d $HOME/.nodebrew/current/bin ]; then
+  export PATH=$PATH:$HOME/.nodebrew/current/bin
+fi
+
 ############## ターミナルのコマンド受付状態の表示変更
 # \u ユーザ名
 # \h ホスト名

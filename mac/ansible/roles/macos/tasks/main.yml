@@ -61,6 +61,14 @@
 
   - block:
     # vim setting
+    - name: pip install for linter & fixer
+      pip:
+        name:
+          - flake8
+          - mypy
+          - autopep8
+          - isort
+        executable: pip3
     - name: create a directory ~/.vim/autoload
       file:
         path: ~/.vim/autoload
@@ -86,13 +94,6 @@
       copy:
         src: vimrc
         dest: ~/.vimrc
-        owner: m-shimao
-        group: staff
-        mode: 0751
-    - name: copy vim-ftplugin
-      copy:
-        src: ftplugin
-        dest: ~/.vim
         owner: m-shimao
         group: staff
         mode: 0751

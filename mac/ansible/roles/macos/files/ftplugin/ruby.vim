@@ -1,1 +1,0 @@
-echo 'filetype ruby'

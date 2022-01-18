@@ -12,3 +12,4 @@ packages:
   - { name: boostnote, state: present }
   # - { name: skype, state: present }
   - { name: drawio, state: present }
+  # - { name: xquartz, state: present } # for ubuntu GUI

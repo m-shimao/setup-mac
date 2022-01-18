@@ -6,8 +6,8 @@ call plug#begin('~/.vim/plugged')
     " カラー
     Plug 'w0ng/vim-hybrid'
 
-    " 対応カッコ等の自動入力
-    Plug 'kana/vim-smartinput'
+    " " 対応カッコ等の自動入力
+    " Plug 'kana/vim-smartinput'
 
     " オペレーター拡張
     Plug 'kana/vim-operator-user'
@@ -33,8 +33,8 @@ call plug#begin('~/.vim/plugged')
 
     " ジャンプ
     Plug 'easymotion/vim-easymotion'
-		" スペースキーにリーダーを割り当て
-		let mapleader = "\<Space>"
+  	" スペースキーにリーダーを割り当て
+  	let mapleader = "\<Space>"
     " s{char}{char} to move to {char}{char}
     map <leader>s <Plug>(easymotion-bd-f2)
     nmap <leader>s <Plug>(easymotion-overwin-f2)
@@ -104,7 +104,7 @@ call plug#begin('~/.vim/plugged')
     let g:ale_linters = {
     \   'python': ['flake8'],
     \}
-		let g:ale_python_flake8_options = '--ignore=E501'
+  	let g:ale_python_flake8_options = '--ignore=E501'
     " fixer系は一旦editorconfigだけにしてみる
     " ファイル保存時にはFixerを実行する
     let g:ale_fix_on_save = 0
@@ -113,12 +113,14 @@ call plug#begin('~/.vim/plugged')
     " Fixer(コード整形ツール)の設定
     let g:ale_fixers = {
     \}
-	  " \   '*': ['remove_trailing_lines', 'trim_whitespace'],
+    " \   '*': ['remove_trailing_lines', 'trim_whitespace'],
     " \   'python': ['autopep8'],
     " 余分な空白があるときは警告表示
     let g:ale_warn_about_trailing_whitespace = 1
     " ALE実行時にでる目印行を常に表示
     let g:ale_sign_column_always = 1
+    nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+    nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
 "    " Python補完
 "    " https://kashewnuts.github.io/2019/01/28/move_from_jedivim_to_vimlsp.html
@@ -128,45 +130,45 @@ call plug#begin('~/.vim/plugged')
 "    """"""""""""""""""""""""""""""
 "    " prabirshrestha/vim-lspの設定
 "    """"""""""""""""""""""""""""""
-"	" デバッグ用設定
-"	let g:lsp_log_verbose = 1  " デバッグ用ログを出力
-"	let g:lsp_log_file = expand('~/.cache/tmp/vim-lsp.log')  " ログ出力のPATHを設定
-"	" 言語用Serverの設定
-"	augroup MyLsp
-"	  autocmd!
-"	  " pip install python-language-server
-"	  if executable('pyls')
-"		" Python用の設定を記載
-"		" workspace_configで以下の設定を記載
-"		" - pycodestyleの設定はALEと重複するので無効にする
-"		" - jediの定義ジャンプで一部無効になっている設定を有効化
-"		autocmd User lsp_setup call lsp#register_server({
-"			\ 'name': 'pyls',
-"			\ 'cmd': { server_info -> ['pyls'] },
-"			\ 'whitelist': ['python'],
-"			\ 'workspace_config': {'pyls': {'plugins': {
-"			\   'pycodestyle': {'enabled': v:false},
-"			\   'jedi_definition': {'follow_imports': v:true, 'follow_builtin_imports': v:true},}}}
-"			\})
-"		autocmd FileType python call s:configure_lsp()
-"	  endif
-"	augroup END
-"	" 言語ごとにServerが実行されたらする設定を関数化
-"	function! s:configure_lsp() abort
-"	  setlocal omnifunc=lsp#complete  " オムニ補完を有効化
-"	  " LSP用にマッピング
-"	  nnoremap <buffer> <C-]> :<C-u>LspDefinition<CR>
-"	  nnoremap <buffer> gd :<C-u>LspDefinition<CR>
-"	  nnoremap <buffer> gD :<C-u>LspReferences<CR>
-"	  nnoremap <buffer> gs :<C-u>LspDocumentSymbol<CR>
-"	  nnoremap <buffer> gS :<C-u>LspWorkspaceSymbol<CR>
-"	  nnoremap <buffer> gQ :<C-u>LspDocumentFormat<CR>
-"	  vnoremap <buffer> gQ :LspDocumentRangeFormat<CR>
-"	  nnoremap <buffer> K :<C-u>LspHover<CR>
-"	  nnoremap <buffer> <F1> :<C-u>LspImplementation<CR>
-"	  nnoremap <buffer> <F2> :<C-u>LspRename<CR>
-"	endfunction
-"	let g:lsp_diagnostics_enabled = 0  " 警告やエラーの表示はALEに任せるのでOFFにする
+"  " デバッグ用設定
+"  let g:lsp_log_verbose = 1  " デバッグ用ログを出力
+"  let g:lsp_log_file = expand('~/.cache/tmp/vim-lsp.log')  " ログ出力のPATHを設定
+"  " 言語用Serverの設定
+"  augroup MyLsp
+"    autocmd!
+"    " pip install python-language-server
+"    if executable('pyls')
+"  	" Python用の設定を記載
+"  	" workspace_configで以下の設定を記載
+"  	" - pycodestyleの設定はALEと重複するので無効にする
+"  	" - jediの定義ジャンプで一部無効になっている設定を有効化
+"  	autocmd User lsp_setup call lsp#register_server({
+"  		\ 'name': 'pyls',
+"  		\ 'cmd': { server_info -> ['pyls'] },
+"  		\ 'whitelist': ['python'],
+"  		\ 'workspace_config': {'pyls': {'plugins': {
+"  		\   'pycodestyle': {'enabled': v:false},
+"  		\   'jedi_definition': {'follow_imports': v:true, 'follow_builtin_imports': v:true},}}}
+"  		\})
+"  	autocmd FileType python call s:configure_lsp()
+"    endif
+"  augroup END
+"  " 言語ごとにServerが実行されたらする設定を関数化
+"  function! s:configure_lsp() abort
+"    setlocal omnifunc=lsp#complete  " オムニ補完を有効化
+"    " LSP用にマッピング
+"    nnoremap <buffer> <C-]> :<C-u>LspDefinition<CR>
+"    nnoremap <buffer> gd :<C-u>LspDefinition<CR>
+"    nnoremap <buffer> gD :<C-u>LspReferences<CR>
+"    nnoremap <buffer> gs :<C-u>LspDocumentSymbol<CR>
+"    nnoremap <buffer> gS :<C-u>LspWorkspaceSymbol<CR>
+"    nnoremap <buffer> gQ :<C-u>LspDocumentFormat<CR>
+"    vnoremap <buffer> gQ :LspDocumentRangeFormat<CR>
+"    nnoremap <buffer> K :<C-u>LspHover<CR>
+"    nnoremap <buffer> <F1> :<C-u>LspImplementation<CR>
+"    nnoremap <buffer> <F2> :<C-u>LspRename<CR>
+"  endfunction
+"  let g:lsp_diagnostics_enabled = 0  " 警告やエラーの表示はALEに任せるのでOFFにする
 
 call plug#end()
 
@@ -228,13 +230,27 @@ set noerrorbells "エラーメッセージの表示時にビープを鳴らさ�
 
 " ファイル末尾の<EOL>を入れないようにする
 " set binary noeol
+" set nofixeol
+set fixeol
 
 " カラースキーマの指定
 " colorscheme murphy
 " colorscheme twilight
-set background=dark
-let g:hybrid_custom_term_colors = 1
-colorscheme hybrid
+
+" check the specified plugin is installed
+function s:is_plugged(name)
+    if exists('g:plugs') && has_key(g:plugs, a:name) && isdirectory(g:plugs[a:name].dir)
+        return 1
+    else
+        return 0
+    endif
+endfunction
+
+if s:is_plugged("vim-hybrid")
+  set background=dark
+  let g:hybrid_custom_term_colors = 1
+  colorscheme hybrid
+endif
 
 syntax on
 " 一行あたりのシンタックスチェック列数を指定

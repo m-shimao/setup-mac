@@ -23,3 +23,9 @@ packages:
   - { name: mono, state: present }
   - { name: go, state: present }
   - { name: nodejs, state: present }
+  - { name: mysql@5.7, state: present }
+  - { name: p7zip, state: present } # 7z
+  - { name: libsass, state: present } # scss
+  - { name: sassc, state: present } # scss
+  - { name: azure-cli, state: present } # azure
+  - { name: git-lfs, state: present }

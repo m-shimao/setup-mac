@@ -23,5 +23,5 @@ packages:
   - { name: ripgrep, state: present }
   - { name: zoxide, state: present }
   - { name: zsh, state: present }
-  - { name: zsh-autocomplete, state: present }
+  - { name: zsh-completions, state: present }
   - { name: zsh-autosuggestions, state: present }

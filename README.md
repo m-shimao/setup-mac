@@ -53,4 +53,15 @@ asdf global nodejs 20.12.0
 sudo nvram StartupMute=%01
 ```
 
+- zsh-completionsの設定（[参考](https://zenn.dev/sprout2000/articles/bd1fac2f3f83bc)）
+```
+chmod go-w '/opt/homebrew/share'
+chmod -R go-w '/opt/homebrew/share/zsh'
+rm -f ~/.zcompdump; compinit
+```
+
 - Macを再起動する
+
+## その他
+
+- [参考記事](https://qiita.com/ucan-lab/items/d61e8c9d4892d6021e61)

@@ -11,6 +11,7 @@ packages:
   - { name: docker, state: present }
   - { name: drawio, state: present }
   - { name: zoom, state: present }
+  - { name: karabiner-elements, state: present }
   # - { name: avira-antivirus, state: present }
   # - { name: vagrant, state: present }
   # - { name: skype, state: present }

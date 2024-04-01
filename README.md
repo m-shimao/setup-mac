@@ -46,6 +46,8 @@ asdf global nodejs 20.12.0
 
 - システム設定 -> キーボード -> テキスト入力 -> 入力ソースの編集でGoogle日本語入力を使用するように設定する
 
+- Karabiner-Elementsを起動して、権限を付与したあとに左コマンドキーで英数、右コマンドキーでかな入力の切り替えの設定を有効化する
+
 - Mac起動音を失くす
 ```bash
 sudo nvram StartupMute=%01

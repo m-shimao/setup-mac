@@ -20,85 +20,30 @@
       - osx_defaults
 
   - block:
-    # bash setting
-    - name: copy ~/.bash_profile template
-      template:
-        src: .bash_profile.j2
-        dest: ~/.bash_profile
-        owner: m-shimao
-        group: staff
-        mode: 0600
-
-    - name: copy ~/.bashrc template
-      template:
-        src: .bashrc.j2
-        dest: ~/.bashrc
-        owner: m-shimao
-        group: staff
-        mode: 0600
-    tags:
-      - bash
-
-  - block:
-    # git setting
-    - name: copy ~/.gitconfig template
-      copy:
-        src: gitconfig
-        dest: ~/.gitconfig
-        owner: m-shimao
-        group: staff
-        mode: 0644
-
-    - name: copy ~/.commit_template template
-      copy:
-        src: commit_template
-        dest: ~/.commit_template
-        owner: m-shimao
-        group: staff
-        mode: 0644
-    tags:
-      - git
-
-  - block:
-    # vim setting
-    - name: pip install for linter & fixer
-      pip:
-        name:
-          - flake8
-          - mypy
-          - autopep8
-          - isort
-        executable: pip3
-    - name: create a directory ~/.vim/autoload
+    # neovim setting
+    - name: create a directory autoload
       file:
-        path: ~/.vim/autoload
+        path: ~/.local/share/nvim/site/autoload
         state: directory
         mode: 0710
-        owner: m-shimao
+        owner: shimao
         group: staff
     - name: create a directory ~/.cache/tmp
       file:
         path: ~/.cache/tmp
         state: directory
         mode: 0751
-        owner: m-shimao
+        owner: shimao
         group: staff
     - name: download vim-plug
       get_url:
         url: https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-        dest: ~/.vim/autoload
+        dest: ~/.local/share/nvim/site/autoload
         mode: 0644
-        owner: m-shimao
+        owner: shimao
         group: staff
-    - name: copy vimrc
-      copy:
-        src: vimrc
-        dest: ~/.vimrc
-        owner: m-shimao
-        group: staff
-        mode: 0751
     - name: PlugInstall
-      shell: vim -c PlugInstall -c q -c q
+      shell: nvim -c PlugInstall -c q -c q
     tags:
       - vim
 

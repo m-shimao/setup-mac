@@ -1,6 +1,10 @@
 ---
 - block:
 
+  - name: upgrade all casks
+    homebrew_cask:
+      upgrade_all: true
+
   - name: homebrew cask packages install 'item.name'
     environment:
       HOMEBREW_CASK_OPTS: --appdir=/Applications

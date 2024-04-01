@@ -5,11 +5,9 @@
     homebrew:
       update_homebrew: true
 
-  - name: homebrew tap
-    homebrew_tap:
-      name: "{{ item }}"
-      state: present
-    with_items: "{{ taps }}"
+  - name: upgrade homebrew
+    homebrew:
+      upgrade_all: true
 
   - name: homebrew packages install
     homebrew:
@@ -17,22 +15,10 @@
       state: "{{ item.state | default('present') }}"
     with_items: "{{ packages }}"
 
-  - block:
-    # node.js
-    - name: create a directory ~/.nodebrew/src
-      file:
-        path: ~/.nodebrew/src
-        state: directory
-        mode: 0710
-        owner: m-shimao
-        group: staff
-    - name: install node.js
-      shell: nodebrew install-binary latest
-      ignore_errors: True
-    - name: use latest version
-      shell: nodebrew use $(nodebrew list | head -n1)
-    tags:
-      - node
+  - name: install docker-tags homebrew package
+    homebrew:
+      name:
+        - koki-develop/tap/docker-tags
 
   tags:
     - homebrew

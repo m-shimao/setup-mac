@@ -1,2 +1,3 @@
-mac/ansible/site.retry
 .DS_Store
+site.retry
+inventory.ini

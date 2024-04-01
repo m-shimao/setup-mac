@@ -1,31 +1,27 @@
 ---
-taps:
-  - homebrew/cask
-  - homebrew/cask-versions
-  - soracom/soracom-cli
-
 packages:
   - { name: ansible, state: present }
+  - { name: asdf, state: present }
   - { name: awscli, state: present }
+  - { name: bat, state: present }
+  - { name: eza, state: present }
+  - { name: fd, state: present }
+  - { name: gh, state: present }
   - { name: git, state: present }
+  - { name: git-delta, state: present }
+  - { name: iterm2, state: present }
   - { name: jq, state: present }
   - { name: mas, state: present } # mas-cli(mac apple store)
   - { name: tree, state: present }
-  - { name: guetzli, state: present }
   - { name: nkf, state: present }
-  - { name: ag, state: present }
-  - { name: hub, state: present }
-  - { name: ffmpeg, state: present }
-  - { name: nodebrew, state: present }
-  - { name: cmake, state: present }
-  - { name: macvim, state: present }
+  - { name: neovim, state: present }
+  - { name: peco, state: present }
   - { name: python, state: present }
-  - { name: mono, state: present }
   - { name: go, state: present }
-  - { name: nodejs, state: present }
-  - { name: mysql@5.7, state: present }
-  - { name: p7zip, state: present } # 7z
   - { name: libsass, state: present } # scss
   - { name: sassc, state: present } # scss
-  - { name: azure-cli, state: present } # azure
-  - { name: git-lfs, state: present }
+  - { name: ripgrep, state: present }
+  - { name: zoxide, state: present }
+  - { name: zsh, state: present }
+  - { name: zsh-autocomplete, state: present }
+  - { name: zsh-autosuggestions, state: present }

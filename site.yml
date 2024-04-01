@@ -1,9 +1,0 @@
----
-- name: OSX First Settings
-  hosts: local
-  connection: local
-  roles:
-    - homebrew
-    - homebrew_cask
-    - mas
-    - macos

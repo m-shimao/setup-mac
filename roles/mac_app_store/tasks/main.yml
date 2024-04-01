@@ -1,0 +1,23 @@
+---
+- block:
+
+  - name: mas is installed
+    shell: brew list
+    register: mas_brew_list
+    changed_when: False
+    check_mode: no
+
+  - block:
+    - name: upgrade applications from app store
+      community.general.mas:
+        upgrade_all: true
+
+    - name: install applications from app store
+      community.general.mas:
+        id: "{{ item.id }}"
+      with_items: "{{ packages }}"
+
+    when: '"mas" in mas_brew_list.stdout_lines'
+
+  tags:
+    - mas

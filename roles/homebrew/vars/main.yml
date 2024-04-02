@@ -3,10 +3,10 @@ packages:
   - { name: ansible, state: present }
   - { name: asdf, state: present }
   - { name: awscli, state: present }
-  - { name: bat, state: present }
-  - { name: eza, state: present }
-  - { name: fd, state: present }
-  - { name: gh, state: present }
+  - { name: bat, state: present } # highlighting, instead of cat
+  - { name: eza, state: present } # hi-speed, instead of ls
+  - { name: fd, state: present } # human like tool, instead of find
+  - { name: gh, state: present } # Github CLI
   - { name: git, state: present }
   - { name: git-delta, state: present }
   - { name: iterm2, state: present }
@@ -15,13 +15,17 @@ packages:
   - { name: tree, state: present }
   - { name: nkf, state: present }
   - { name: neovim, state: present }
-  - { name: peco, state: present }
   - { name: python, state: present }
   - { name: go, state: present }
   - { name: libsass, state: present } # scss
   - { name: sassc, state: present } # scss
-  - { name: ripgrep, state: present }
-  - { name: zoxide, state: present }
+  - { name: ripgrep, state: present } # hi-speed grep
+  - { name: fzf, state: present } # command-line fuzzy finder
+  - { name: zoxide, state: present } # interactive, instead of cd
   - { name: zsh, state: present }
   - { name: zsh-completions, state: present }
   - { name: zsh-autosuggestions, state: present }
+  - { name: gpg, state: present } # for yarn
+  - { name: direnv, state: present }
+  - { name: poppler, state: present } # for my app
+  - { name: imagemagick, state: present } # for my app

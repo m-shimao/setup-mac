@@ -12,6 +12,7 @@ packages:
   - { name: drawio, state: present }
   - { name: zoom, state: present }
   - { name: karabiner-elements, state: present }
+  - { name: aws-vault, state: present }
   # - { name: avira-antivirus, state: present }
   # - { name: vagrant, state: present }
   # - { name: skype, state: present }

@@ -29,3 +29,13 @@ packages:
   - { name: direnv, state: present }
   - { name: poppler, state: present } # for my app
   - { name: imagemagick, state: present } # for my app
+  - { name: kubernetes-cli, state: present } # for my app
+  - { name: mysql, state: present } # for my app
+  - { name: grpcurl, state: present } # for my app
+  - { name: kube-ps1, state: present } # for my app
+  - { name: derailed/k9s/k9s, state: present } # for my app
+  - { name: kubectx, state: present } # for my app
+  - { name: stern, state: present } # for my app
+  - { name: clang-format, state: present } # proto format
+  - { name: golangci-lint, state: present } # go lint
+  - { name: charmbracelet/tap/freeze, state: present } # cli output capture tool https://zenn.dev/kou_pg_0131/articles/freeze-introduction

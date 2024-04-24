@@ -36,6 +36,9 @@ packages:
   - { name: derailed/k9s/k9s, state: present } # for my app
   - { name: kubectx, state: present } # for my app
   - { name: stern, state: present } # for my app
+  - { name: helm, state: present } # for my app
+  - { name: helmfile, state: present } # for my app
   - { name: clang-format, state: present } # proto format
   - { name: golangci-lint, state: present } # go lint
   - { name: charmbracelet/tap/freeze, state: present } # cli output capture tool https://zenn.dev/kou_pg_0131/articles/freeze-introduction
+  - { name: watch, state: present }

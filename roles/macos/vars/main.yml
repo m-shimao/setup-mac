@@ -9,3 +9,4 @@ settings:
   - { domain: com.apple.menuextra.battery, key: ShowPercent, type: string, value: YES }
   - { domain: com.apple.AppleMultitouchTrackpad, key: TrackpadCornerSecondaryClick, type: int, value: 2 }
   - { domain: com.apple.AppleMultitouchTrackpad, key: Clicking, type: int, value: 1 }
+  - { domain: com.microsoft.VSCode, key: ApplePressAndHoldEnabled, type: bool, value: FALSE }

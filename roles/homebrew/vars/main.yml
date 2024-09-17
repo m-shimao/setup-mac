@@ -42,3 +42,4 @@ packages:
   - { name: golangci-lint, state: present } # go lint
   - { name: charmbracelet/tap/freeze, state: present } # cli output capture tool https://zenn.dev/kou_pg_0131/articles/freeze-introduction
   - { name: watch, state: present }
+  - { name: sqlfluff, state: present } # for my app
